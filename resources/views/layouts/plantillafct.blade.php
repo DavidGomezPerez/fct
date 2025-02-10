@@ -6,6 +6,8 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset("css/app.css") }}">
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/outline/index.min.js"></script>
     <style>
         .group:hover .group-hover\:block,
@@ -25,7 +27,7 @@
                     <li class="relative group">
                         <a href="{{ route("indexAlumnos") }}" class="hover:text-blue-200 transition duration-300">Alumnos</a>
                         <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-md mt-2 py-2 w-48 rounded-md z-10">
-                            <li><a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Alumno</a></li>
+                            <li><a href="{{ route("showAnyadirAlumno") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Alumno</a></li>
                             <li><a href="{{ route("indexAlumnos") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Alumnos</a></li>
                         </ul>
                     </li>
