@@ -15,26 +15,14 @@ class AlumnoController extends Controller
     }
 
     public function searchAlumnos(Request $request){
-        // Iniciar la consulta
-        $query = Alumno::query();
-
-        // Si hay algo en el campo de búsqueda
-        if ($request->has('search') && $request->search != '') {
-            $search = $request->search;
-            // Filtrar por todos los campos relevantes
-            $query->where(function ($query) use ($search) {
-                $query->whereRaw('nombre', 'like', "%{$search}%")
-                    ->orWhereRaw('apellidos', 'like', "%{$search}%")
-                    ->orWhereRaw('NIF', 'like', "%{$search}%")
-                    ->orWhereRaw('NUSS', 'like', "%{$search}%")
-                    ->orWhereRaw('email', 'like', "%{$search}%")
-                    ->orWhereRaw('telefono', 'like', "%{$search}%")
-                    ->orWhereRaw('fecha_nacimiento', 'like', "%{$search}%");
-            });
-        }
-
-        // Obtener los resultados con paginación
-        $alumnos = $query->paginate(6); // Aquí puedes cambiar el número de registros por página
+        $search = $request->search;
+        $alumnos = Alumno::whereRaw('LOWER(nombre) LIKE ?', ['%'.strtolower($search).'%'])
+            ->orWhereRaw('LOWER(apellidos) LIKE ?', ['%'.strtolower($search).'%'])
+            ->orWhereRaw('LOWER(NIF) LIKE ?', ['%'.strtolower($search).'%'])
+            ->orWhereRaw('NUSS LIKE ?', ['%'.$search.'%'])
+            ->orWhereRaw('LOWER(email) LIKE ?', ['%'.strtolower($search).'%'])
+            ->orWhereRaw('telefono LIKE ?', ['%'.$search.'%'])
+            ->paginate(6);
 
         // Retornar la vista con los alumnos filtrados
         return view('alumnos.lista-alumnos', compact('alumnos'));
