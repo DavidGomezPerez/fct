@@ -2,11 +2,11 @@
 @section("title", "Sistema de Gestión FCT - Añadir alumno")
 
 @section("content")
-    <div class="container mx-auto px-4 py-8">        
+    <div class="container mx-auto px-4 py-8">
         <form action="{{ route("storeAlumno") }}" method="POST" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md space-y-6">
             @csrf
             <h1 class="text-3xl font-bold text-center mb-8">Añadir Alumno</h1>
-            
+
             <x-campos-form label="Nombre" name="nombre"/>
             <x-campos-form label="Apellidos" name="apellidos"/>
             <x-campos-form label="NIF" name="NIF"/>
@@ -29,4 +29,14 @@
             <input type="submit" value="Añadir" class="cursor-pointer bg-green-600 p-4 text-white text-lg font-semibold w-full rounded-md hover:bg-green-800 transition duration-300">
         </form>
     </div>
+    @if ($errors->any())
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Errores en el formulario',
+                html: '{!! implode("<br>", $errors->all()) !!}',
+                confirmButtonColor: "#2563eb",
+            });
+        </script>
+    @endif
 @endsection
