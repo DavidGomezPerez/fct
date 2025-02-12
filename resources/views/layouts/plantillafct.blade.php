@@ -21,36 +21,56 @@
         <nav class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-center">
                 <ul class="hidden md:flex space-x-6">
-                    <li class="relative-group">
-                        <a href="{{ route("index") }}" class="hover:text-blue-200 transition duration-300">Inicio</a>
-                    </li>
                     <li class="relative group">
                         <a href="{{ route("indexAlumnos") }}" class="hover:text-blue-200 transition duration-300">Alumnos</a>
                         <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-md mt-2 py-2 w-48 rounded-md z-10">
-                            <li><a href="{{ route("showAnyadirAlumno") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Alumno</a></li>
-                            <li><a href="{{ route("indexAlumnos") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Alumnos</a></li>
-                            <li><a href="{{ route("showAsignarTutorEmpresa") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Asignar Tutor de Empresa</a></li>
+                            <li>
+                                <a href="{{ route("showAnyadirAlumno") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Alumno</a>
+                            </li>
+                            <li>
+                                <a href="{{ route("indexAlumnos") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Alumnos</a>
+                            </li>
+                            <li>
+                                <a href="{{ route("showAsignarTutorEmpresa") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Asignar Tutor de Empresa</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="relative group">
                         <a href="{{ route("indexTutoresIes") }}" class="hover:text-blue-200 transition duration-300">Tutores IES</a>
                         <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-md mt-2 py-2 w-48 rounded-md z-10">
-                            <li><a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Tutor IES</a></li>
-                            <li><a href="{{ route("indexTutoresIes") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Tutores IES</a></li>
+                            <li>
+                                <a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Tutor IES</a>
+                            </li>
+                            <li>
+                                <a href="{{ route("indexTutoresIes") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Tutores IES</a>
+                            </li>
                         </ul>
+                    </li>
+                    <li class="relative group">
+                        <a href="{{ route("index") }}">
+                            <img src="https://aulas.iesalcantara.es/pluginfile.php/1/core_admin/logocompact/300x300/1719391267/logoalcan.png" alt="Logo IES Alcántara" width="70px" class="rounded-full">
+                        </a>
                     </li>
                     <li class="relative group">
                         <a href="#" class="hover:text-blue-200 transition duration-300">Tutores Empresas</a>
                         <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-md mt-2 py-2 w-48 rounded-md z-10">
-                            <li><a href="{{ route("showAnyadirTutorEmpresa") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Tutor Empresa</a></li>
-                            <li><a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Tutores Empresas</a></li>
+                            <li>
+                                <a href="{{ route("showAnyadirTutorEmpresa") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Tutor Empresa</a>
+                            </li>
+                            <li>
+                                <a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Tutores Empresas</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="relative group">
                         <a href="#" class="hover:text-blue-200 transition duration-300">Empresas</a>
                         <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-md mt-2 py-2 w-48 rounded-md z-10">
-                            <li><a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Empresa</a></li>
-                            <li><a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Empresas</a></li>
+                            <li>
+                                <a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Empresa</a>
+                            </li>
+                            <li>
+                                <a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Empresas</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

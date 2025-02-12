@@ -19,6 +19,7 @@ Route::get("/tutoresEmpresa/anadir", [TutorEmpresaController::class, "showAnyadi
 
 //Rutas GET de los tutores del IES
 Route::get("/tutoresIes", [TutorIesController::class, "indexAll"])->name("indexTutoresIes");
+Route::get("/tutorIes/{id}/alumnos", [TutorIesController::class, "showAlumnos"])->name("showAlumnosTutorIes");
 
 //Rutas POST de los alumnos
 Route::post("/alumno/store", [AlumnoController::class, "store"])->name("storeAlumno");

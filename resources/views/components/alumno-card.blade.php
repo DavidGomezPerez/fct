@@ -8,6 +8,17 @@
     <p class="text-gray-600">Nº móvil: {{ $alumno->telefono }}</p>
     <p class="text-gray-600">Fecha nacimiento: {{ $alumno->fecha_nacimiento }}</p>
     <p class="text-gray-600">Tutor Instituto: {{ $alumno->tutorInstituto->nombre }} {{ $alumno->tutorInstituto->apellidos }}</p>
+    <p class="text-gray-600">Empresas donde realiza o ha realizado prácticas:</p>
+    <ul class="text-gray-500 list-disc pl-6">
+        {{-- Verificar que tutoresEmpresas no sea null antes de iterar --}}
+        @if (!empty($alumno->tutoresEmpresas) && $alumno->tutoresEmpresas->isNotEmpty())
+            @foreach ($alumno->tutoresEmpresas as $tutorEmpresa)
+                <li>{{ $tutorEmpresa->empresa->nombre ?? 'Sin empresa asociada' }}</li>
+            @endforeach
+        @else
+            <li>No ha realizado prácticas en ninguna empresa</li>
+        @endif
+    </ul>   
     <div class="flex justify-center">
         <form action="{{ route('showEditarAlumno', $alumno->id) }}" method="GET" class="flex justify-center space-x-4 mt-4">
             @csrf

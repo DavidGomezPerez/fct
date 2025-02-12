@@ -21,7 +21,7 @@ class AlumnoSeeder extends Seeder
             "email" => "juan.perez@gmail.com",
             "telefono" => "657438299",
             "fecha_nacimiento" => "2003-04-10",
-            "tutoresinstitutos_id" => 1,
+            "tutoresinstituto_id" => 1,
         ]);
 
         Alumno::create([
@@ -32,7 +32,7 @@ class AlumnoSeeder extends Seeder
             'email' => 'marta.sanchez@alumno.com',
             'telefono' => '623456789',
             'fecha_nacimiento' => '2002-06-15',
-            'tutoresinstitutos_id' => 2,
+            'tutoresinstituto_id' => 2,
         ]);
 
         Alumno::create([
@@ -43,7 +43,7 @@ class AlumnoSeeder extends Seeder
             'email' => 'pedro.lopez@alumno.com',
             'telefono' => '634567890',
             'fecha_nacimiento' => '2001-02-20',
-            'tutoresinstitutos_id' => 3,
+            'tutoresinstituto_id' => 3,
         ]);
     }
 }

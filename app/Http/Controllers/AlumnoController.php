@@ -53,7 +53,7 @@ class AlumnoController extends Controller
         $alumno->email = $request->email;
         $alumno->telefono = $request->telefono;
         $alumno->fecha_nacimiento = $request->fecha_nacimiento;
-        $alumno->tutoresinstitutos_id = $request->tutoresinstitutos_id;
+        $alumno->tutoresinstituto_id = $request->tutoresinstituto_id;
 
         $alumno->save();
         return redirect()->route("indexAlumnos")->with("success", "Alumno dado de alta correctamente");

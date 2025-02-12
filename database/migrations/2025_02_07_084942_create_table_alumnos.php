@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string("email", 255)->unique();
             $table->string("telefono", 15);
             $table->date("fecha_nacimiento");
-            $table->foreignId("tutoresinstitutos_id")->nullable()->constrained("tutoresinstitutos")->nullOnDelete();
+            $table->foreignId("tutoresinstituto_id")->nullable()->constrained("tutoresinstitutos")->nullOnDelete();
             $table->timestamps();
         });
     }

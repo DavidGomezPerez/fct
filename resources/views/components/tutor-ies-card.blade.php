@@ -11,6 +11,11 @@
             </button>
         </form>
 
+        <form action="{{ route("showAlumnosTutorIes", $tutorIes->id) }}" method="GET" class="flex justify-center space-x-4 mt-4">
+            @csrf
+            <button type="submit" class="px-4 py-2 bg-yellow-600 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-800 transition duration-300">Ver alumnos</button>
+        </form>
+
         <form action="" method="POST" class="delete-form flex justify-center space-x-4 mt-4">
             @csrf
             @method('DELETE')
