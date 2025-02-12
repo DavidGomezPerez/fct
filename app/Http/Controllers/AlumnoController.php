@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumno;
+use App\Models\AlumnoTutorEmpresa;
+use App\Models\Tutorempresa;
 use App\Models\Tutorinstituto;
 use App\Rules\ValidarNUSS;
 use Illuminate\Http\Request;
@@ -94,5 +96,24 @@ class AlumnoController extends Controller
             $alumno->delete();
             return redirect()->route("indexAlumnos")->with("success", "Alumno eliminado correctamente");
         }
+    }
+
+    public function showAsignarTutorEmpresa(){
+        $alumnos = Alumno::all();
+        $tutoresEmpresa = Tutorempresa::all();
+
+        return view("alumnos.asignar-tutor-empresa", compact("alumnos", "tutoresEmpresa"));
+    }
+
+    public function asignarTutorEmpresa(Request $request){
+        $asignacion = new AlumnoTutorEmpresa();
+
+        $asignacion->alumno_id = $request->alumno_id;
+        $asignacion->tutoresempresa_id = $request->tutoresempresa_id;
+        $asignacion->fecha_inicio = $request->fecha_inicio;
+        $asignacion->fecha_fin = $request->fecha_fin;
+
+        $asignacion->save();
+        return back()->with("success", "Tutor de empresa asignado al alumno correctamente");
     }
 }

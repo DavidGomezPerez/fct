@@ -26,7 +26,7 @@
                 <label for="tutorinstituto_id" class="absolute left-3 top-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-blue-500">Tutor del instituto</label>
             </div>
 
-            <input type="submit" value="Añadir" class="cursor-pointer bg-green-600 p-4 text-white text-lg font-semibold w-full rounded-md hover:bg-green-800 transition duration-300">
+            <input type="submit" value="Añadir" class="cursor-pointer bg-green-600 p-2 text-white text-lg font-semibold w-full rounded-md hover:bg-green-800 transition duration-300">
         </form>
     </div>
     @if ($errors->any())

@@ -29,19 +29,20 @@
                         <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-md mt-2 py-2 w-48 rounded-md z-10">
                             <li><a href="{{ route("showAnyadirAlumno") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Alumno</a></li>
                             <li><a href="{{ route("indexAlumnos") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Alumnos</a></li>
+                            <li><a href="{{ route("showAsignarTutorEmpresa") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Asignar Tutor de Empresa</a></li>
                         </ul>
                     </li>
                     <li class="relative group">
-                        <a href="#" class="hover:text-blue-200 transition duration-300">Tutores IES</a>
+                        <a href="{{ route("indexTutoresIes") }}" class="hover:text-blue-200 transition duration-300">Tutores IES</a>
                         <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-md mt-2 py-2 w-48 rounded-md z-10">
                             <li><a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Tutor IES</a></li>
-                            <li><a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Tutores IES</a></li>
+                            <li><a href="{{ route("indexTutoresIes") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Tutores IES</a></li>
                         </ul>
                     </li>
                     <li class="relative group">
                         <a href="#" class="hover:text-blue-200 transition duration-300">Tutores Empresas</a>
                         <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-md mt-2 py-2 w-48 rounded-md z-10">
-                            <li><a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Tutor Empresa</a></li>
+                            <li><a href="{{ route("showAnyadirTutorEmpresa") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Tutor Empresa</a></li>
                             <li><a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Tutores Empresas</a></li>
                         </ul>
                     </li>
