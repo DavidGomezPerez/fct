@@ -17,7 +17,6 @@ class TutorIesController extends Controller
     public function showAlumnos(Request $request){
         $tutorIes = Tutorinstituto::findOrFail($request->id);
 
-        // Asegurar que se carga la relación correcta
         $alumnos = $tutorIes->alumnos()->with(['tutoresEmpresas' => function ($query) {
             $query->with('empresa');
         }])->paginate(6);

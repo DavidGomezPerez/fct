@@ -14,5 +14,9 @@
         <div class="mt-6">
             {{ $tutoresIes->links() }}
         </div>
+
+        <div class="mt-6">
+            {{ $tutoresIes->links() }}
+        </div>
     </div>
 @endsection

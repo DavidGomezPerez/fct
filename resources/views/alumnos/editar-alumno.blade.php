@@ -18,7 +18,7 @@
             <x-campos-form label="Fecha nacimiento" name="fecha_nacimiento" type="date" value="{{ $alumno->fecha_nacimiento }}"/>
 
             <div class="relative">
-                <select name="tutoresinstitutos_id" id="tutoresinstitutos_id" class="peer w-full border border-gray-300 rounded-md px-3 pt-6 pb-2 focus:border-blue-500 focus:ring-blue-500 focus:outline-none">
+                <select name="tutoresinstituto_id" id="tutoresinstituto_id" class="peer w-full border border-gray-300 rounded-md px-3 pt-6 pb-2 focus:border-blue-500 focus:ring-blue-500 focus:outline-none">
                     @forelse ($tutoresIes as $tutor)
                         @if ($tutor->id === $alumno->tutorInstituto->id)
                             <option value="{{ $tutor->id }}" selected>{{ $tutor->nombre }} {{ $tutor->apellidos }}</option>
@@ -29,10 +29,10 @@
                         <option>No hay tutores</option>
                     @endforelse
                 </select>
-                <label for="tutorinstituto_id" class="absolute left-3 top-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-blue-500">Tutor del instituto</label>
+                <label for="tutoresinstituto_id" class="absolute left-3 top-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-blue-500">Tutor del instituto</label>
             </div>
 
-            <input type="submit" value="Añadir" class="cursor-pointer bg-green-600 p-4 text-white text-lg font-semibold w-full rounded-md hover:bg-green-800 transition duration-300">
+            <input type="submit" value="Actualizar" class="cursor-pointer bg-green-600 p-4 text-white text-lg font-semibold w-full rounded-md hover:bg-green-800 transition duration-300">
         </form>
     </div>
     @if ($errors->any())

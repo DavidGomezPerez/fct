@@ -20,7 +20,7 @@ class Tutorempresa extends Model
     }
 
     public function alumnos(){
-        return $this->belongsToMany(Alumno::class, 'alumno_tutoresempresa', 'tutorempresa_id', 'alumno_id')
+        return $this->belongsToMany(Alumno::class, 'alumno_tutoresempresa', 'tutoresempresa_id', 'alumno_id')
             ->withPivot('fecha_inicio', 'fecha_fin')
             ->withTimestamps();
     }

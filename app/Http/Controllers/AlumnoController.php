@@ -83,7 +83,7 @@ class AlumnoController extends Controller
         $alumno->email = $request->email;
         $alumno->telefono = $request->telefono;
         $alumno->fecha_nacimiento = $request->fecha_nacimiento;
-        $alumno->tutoresinstitutos_id = $request->tutoresinstitutos_id;
+        $alumno->tutoresinstituto_id = $request->tutoresinstituto_id;
 
         $alumno->save();
         return redirect()->route("indexAlumnos")->with("success", "Alumno editado correctamente");
@@ -100,7 +100,7 @@ class AlumnoController extends Controller
 
     public function showAsignarTutorEmpresa(){
         $alumnos = Alumno::all();
-        $tutoresEmpresa = Tutorempresa::all();
+        $tutoresEmpresa = Tutorempresa::with("empresa")->get();
 
         return view("alumnos.asignar-tutor-empresa", compact("alumnos", "tutoresEmpresa"));
     }

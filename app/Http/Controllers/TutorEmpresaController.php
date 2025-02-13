@@ -25,4 +25,11 @@ class TutorEmpresaController extends Controller
         $tutorEmpresa->save();
         return back()->with("success", "Tutor de empresa dado de alta correctamente");
     }
+
+    public function showAlumnos(Request $request){
+        $tutorEmpresa = Tutorempresa::findOrFail($request->id);
+        $alumnos = $tutorEmpresa->alumnos()->paginate(6);
+
+        return view("tutoresEmpresa.alumnos-tutor-empresa", compact("tutorEmpresa", "alumnos"));
+    }
 }

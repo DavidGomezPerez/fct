@@ -52,19 +52,19 @@
         </div>
 
         <div class="mt-12 text-center">
-            <p class="text-lg mb-4">Bienvenido al Sistema de Gestión Educativa. Accede rápidamente a las funciones principales:</p>
+            <p class="text-lg mb-4">Bienvenido al Sistema de Gestión FCT. Accede rápidamente a las funciones principales:</p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="{{ route("showAnyadirAlumno") }}" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
                     Añadir Alumno
                 </a>
-                <a href="" class="inline-block bg-green-600 text-white font-bold py-2 px-4 rounded hover:bg-green-700 transition duration-300">
-                    Ver empresas
+                <a href="{{ route("indexEmpresas") }}" class="inline-block bg-green-600 text-white font-bold py-2 px-4 rounded hover:bg-green-700 transition duration-300">
+                    Ver Empresas
                 </a>
                 <a href="" class="inline-block bg-purple-600 text-white font-bold py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
-                    Tutores Empresas
+                    Ver Tutores Empresas
                 </a>
-                <a href="" class="inline-block bg-yellow-600 text-white font-bold py-2 px-4 rounded hover:bg-yellow-700 transition duration-300">
-                    Tutores IES
+                <a href="{{ route("indexTutoresIes") }}" class="inline-block bg-yellow-600 text-white font-bold py-2 px-4 rounded hover:bg-yellow-700 transition duration-300">
+                    Ver Tutores IES
                 </a>
             </div>
         </div>

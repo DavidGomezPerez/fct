@@ -16,21 +16,21 @@ class TutorEmpresaSeeder extends Seeder
         TutorEmpresa::create([
             'nombre' => 'Juan',
             'apellidos' => 'Ramírez Díaz',
-            'email' => 'juan.ramirez@techsolutions.com',
+            'email' => 'juan.ramirez@nttdata.com',
             'empresa_id' => 1,
         ]);
 
         TutorEmpresa::create([
             'nombre' => 'Laura',
             'apellidos' => 'González Martín',
-            'email' => 'laura.gonzalez@innovativelabs.com',
+            'email' => 'laura.gonzalez@intuya.com',
             'empresa_id' => 2,
         ]);
 
         TutorEmpresa::create([
             'nombre' => 'Ricardo',
             'apellidos' => 'Fernández Pérez',
-            'email' => 'ricardo.fernandez@globalindustries.com',
+            'email' => 'ricardo.fernandez@innovativelabs.com',
             'empresa_id' => 3,
         ]);
     }

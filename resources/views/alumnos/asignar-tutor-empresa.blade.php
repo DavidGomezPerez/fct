@@ -23,7 +23,7 @@
             <div class="relative">
                 <select name="tutoresempresa_id" id="tutoresempresa_id" class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-2 focus:border-blue-500 focus:ring-blue-500 focus:outline-none">
                     @forelse ($tutoresEmpresa as $tutorEmpresa)
-                        <option value="{{ $tutorEmpresa->id }}">{{ $tutorEmpresa->nombre }}  {{ $tutorEmpresa->apellidos }}</option>
+                        <option value="{{ $tutorEmpresa->id }}">{{ $tutorEmpresa->nombre }}  {{ $tutorEmpresa->apellidos }} ({{ $tutorEmpresa->empresa->nombre }})</option>
                     @empty
                         <option>No hay alumnos registrados</option>
                     @endforelse

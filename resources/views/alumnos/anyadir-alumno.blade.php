@@ -7,18 +7,18 @@
             @csrf
             <h1 class="text-3xl font-bold text-center mb-8">Añadir Alumno</h1>
 
-            <x-campos-form label="Nombre" name="nombre"/>
-            <x-campos-form label="Apellidos" name="apellidos"/>
-            <x-campos-form label="NIF" name="NIF"/>
-            <x-campos-form label="NUSS" name="NUSS"/>
-            <x-campos-form label="Email" name="email" type="email"/>
-            <x-campos-form label="Nº teléfono" name="telefono"/>
-            <x-campos-form label="Fecha nacimiento" name="fecha_nacimiento" type="date"/>
+            <x-campos-form label="Nombre" name="nombre" value="{{ old('nombre') }}"/>
+            <x-campos-form label="Apellidos" name="apellidos" value="{{ old('apellidos') }}"/>
+            <x-campos-form label="NIF" name="NIF" value="{{ old('NIF') }}"/>
+            <x-campos-form label="NUSS" name="NUSS" value="{{ old('NUSS') }}"/>
+            <x-campos-form label="Email" name="email" type="email" value="{{ old('email') }}"/>
+            <x-campos-form label="Nº teléfono" name="telefono" value="{{ old('telefono') }}"/>
+            <x-campos-form label="Fecha nacimiento" name="fecha_nacimiento" type="date" value="{{ old('fecha_nacimiento') }}"/>
 
             <div class="relative">
                 <select name="tutoresinstituto_id" id="tutoresinstituto_id" class="peer w-full border border-gray-300 rounded-md px-3 pt-6 pb-2 focus:border-blue-500 focus:ring-blue-500 focus:outline-none">
                     @forelse ($tutoresIes as $tutor)
-                        <option value="{{ $tutor->id }}">{{ $tutor->nombre }} {{ $tutor->apellidos }}</option>
+                        <option value="{{ $tutor->id }}" {{ old("tutoresinstituto_id") == $tutor->id ? "selected" : "" }}>{{ $tutor->nombre }} {{ $tutor->apellidos }}</option>
                     @empty
                         <option>No hay tutores</option>
                     @endforelse

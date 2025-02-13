@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TutorEmpresaController;
 use App\Http\Controllers\TutorIesController;
@@ -16,10 +17,18 @@ Route::get('/alumno/asignarTutorEmpresa', [AlumnoController::class, "showAsignar
 
 //Rutas GET de los tutores de empresa
 Route::get("/tutoresEmpresa/anadir", [TutorEmpresaController::class, "showAnyadir"])->name("showAnyadirTutorEmpresa");
+Route::get("/tutorEmpresa/{id}/alumnos", [TutorEmpresaController::class, "showAlumnos"])->name("showAlumnosTutorEmpresa");
 
 //Rutas GET de los tutores del IES
 Route::get("/tutoresIes", [TutorIesController::class, "indexAll"])->name("indexTutoresIes");
 Route::get("/tutorIes/{id}/alumnos", [TutorIesController::class, "showAlumnos"])->name("showAlumnosTutorIes");
+
+//Rutas GET de las empresas
+Route::get("/empresas", [EmpresaController::class, "indexAll"])->name("indexEmpresas");
+Route::get("/empresas/anadir", [EmpresaController::class, "showAnyadirEmpresa"])->name("showAnyadirEmpresa");
+Route::get("/empresas/{id}/tutores", [EmpresaController::class, "indexTutores"])->name("empresaIndexTutores");
+Route::get("/empresas/{id}", [EmpresaController::class, "showEditar"])->name("showEditarEmpresa");
+Route::get("/buscar/empresas", [EmpresaController::class, "searchEmpresas"])->name("searchEmpresas");
 
 //Rutas POST de los alumnos
 Route::post("/alumno/store", [AlumnoController::class, "store"])->name("storeAlumno");
@@ -28,8 +37,17 @@ Route::post("/asignarTutorEmpresa/store", [AlumnoController::class, "asignarTuto
 //Rutas POST de los tutores de empresa
 Route::post("/tutorEmpresa/store", [TutorEmpresaController::class, "store"])->name("storeTutorEmpresa");
 
+//Rutas POST de las empresas
+Route::post("/empresas/store", [EmpresaController::class, "store"])->name("storeEmpresa");
+
 //Rutas PUT de los alumnos
 Route::put("/alumno/update", [AlumnoController::class, "update"])->name("updateAlumno");
 
+//Rutas PUT de las empresas
+Route::put("/empresa/update", [EmpresaController::class, "update"])->name("updateEmpresa");
+
 //Rutas DELETE de los alumnos
 Route::delete("/alumno/delete/{id}", [AlumnoController::class, "destroy"])->name("destroyAlumno");
+
+//Rutas DELETE de las empresas
+Route::delete("/empresa/delete/{id}", [EmpresaController::class, "destroy"])->name("destroyEmpresa");
