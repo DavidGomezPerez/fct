@@ -60,7 +60,7 @@
                 <a href="{{ route("indexEmpresas") }}" class="inline-block bg-green-600 text-white font-bold py-2 px-4 rounded hover:bg-green-700 transition duration-300">
                     Ver Empresas
                 </a>
-                <a href="" class="inline-block bg-purple-600 text-white font-bold py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
+                <a href="{{ route("indexTutoresEmpresa") }}" class="inline-block bg-purple-600 text-white font-bold py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
                     Ver Tutores Empresas
                 </a>
                 <a href="{{ route("indexTutoresIes") }}" class="inline-block bg-yellow-600 text-white font-bold py-2 px-4 rounded hover:bg-yellow-700 transition duration-300">

@@ -25,20 +25,8 @@
                 peer-focus:text-blue-500">Empresa</label>
             </div>
 
-                <input type="submit" value="Editar" class="w-full text-center bg-green-600 text-lg text-white font-semibold p-2 rounded-md
+                <input type="submit" value="Actualizar" class="w-full text-center bg-green-600 text-lg text-white font-semibold p-2 rounded-md
                 cursor-pointer hover:bg-green-800 transition duration-300">
         </form>
     </div>
-    @if(session("success"))
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                Swal.fire({
-                    icon: 'success',
-                    iconColor: 'green',
-                    text: '{{ session("success") }}',
-                    confirmButtonColor: "#2563eb",
-                });
-            });
-        </script>
-    @endif
 @endsection

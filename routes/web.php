@@ -24,7 +24,10 @@ Route::get("/tutoresEmpresa/{id}", [TutorEmpresaController::class, "showEditar"]
 
 //Rutas GET de los tutores del IES
 Route::get("/tutoresIes", [TutorIesController::class, "indexAll"])->name("indexTutoresIes");
+Route::get("/tutoresIes/anadir", [TutorIesController::class, "showAnyadir"])->name("showAnyadirTutorIes");
+Route::get("/tutorIes/{id}", [TutorIesController::class, "showEditar"])->name("showEditarTutorIes");
 Route::get("/tutorIes/{id}/alumnos", [TutorIesController::class, "showAlumnos"])->name("showAlumnosTutorIes");
+Route::get("/buscar/tutoresIes", [TutorIesController::class, "searchTutoresIes"])->name("searchTutoresIes");
 
 //Rutas GET de las empresas
 Route::get("/empresas", [EmpresaController::class, "indexAll"])->name("indexEmpresas");
@@ -37,6 +40,9 @@ Route::get("/buscar/empresas", [EmpresaController::class, "searchEmpresas"])->na
 Route::post("/alumno/store", [AlumnoController::class, "store"])->name("storeAlumno");
 Route::post("/asignarTutorEmpresa/store", [AlumnoController::class, "asignarTutorEmpresa"])->name("asignarTutorEmpresa");
 
+//Rutas POST de los tutores del IES
+Route::post("/tutorIes/store", [TutorIesController::class, "store"])->name("storeTutorIes");
+
 //Rutas POST de los tutores de empresa
 Route::post("/tutorEmpresa/store", [TutorEmpresaController::class, "store"])->name("storeTutorEmpresa");
 
@@ -46,6 +52,9 @@ Route::post("/empresas/store", [EmpresaController::class, "store"])->name("store
 //Rutas PUT de los alumnos
 Route::put("/alumno/update", [AlumnoController::class, "update"])->name("updateAlumno");
 
+//Rutas PUT de los tutores del IES
+Route::put("/tutorIes/update", [TutorIesController::class, "update"])->name("updateTutorIes");
+
 //Rutas PUT de las empresas
 Route::put("/empresa/update", [EmpresaController::class, "update"])->name("updateEmpresa");
 
@@ -54,6 +63,9 @@ Route::put("/tutorEmpresa/update", [TutorEmpresaController::class, "update"])->n
 
 //Rutas DELETE de los alumnos
 Route::delete("/alumno/delete/{id}", [AlumnoController::class, "destroy"])->name("destroyAlumno");
+
+//Rutas DELETE de los tutores del IES
+Route::delete("/tutorIes/delete/{id}", [TutorIesController::class, "destroy"])->name("destroyTutorIes");
 
 //Rutas DELETE de las empresas
 Route::delete("/empresa/delete/{id}", [EmpresaController::class, "destroy"])->name("destroyEmpresa");

@@ -28,16 +28,4 @@
                 cursor-pointer hover:bg-green-800 transition duration-300">
         </form>
     </div>
-    @if(session("success"))
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                Swal.fire({
-                    icon: 'success',
-                    iconColor: 'green',
-                    text: '{{ session("success") }}',
-                    confirmButtonColor: "#2563eb",
-                });
-            });
-        </script>
-    @endif
 @endsection
