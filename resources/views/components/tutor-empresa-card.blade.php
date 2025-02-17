@@ -5,7 +5,7 @@
     <p class="text-gray-600">Email: {{ $tutorEmpresa->email }}</p>
     <p class="text-gray-600">Empresa: {{ $empresa->nombre }}</p>
     <div class="flex justify-center">
-        <form action="" method="GET" class="flex justify-center space-x-4 mt-4">
+        <form action="{{ route("showEditarTutorEmpresa", $tutorEmpresa->id) }}" method="GET" class="flex justify-center space-x-4 mt-4">
             @csrf
             <button type="submit" class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-800 transition duration-300">
                 Editar
@@ -15,7 +15,7 @@
             @csrf
             <button type="submit" class="px-4 py-2 bg-yellow-600 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-800 transition duration-300">Ver alumnos asignados</button>
         </form>
-        <form action="" method="POST" class="delete-form flex justify-center space-x-4 mt-4">
+        <form action="{{ route("destroyTutorEmpresa", $tutorEmpresa->id) }}" method="POST" class="delete-form flex justify-center space-x-4 mt-4">
             @csrf
             @method('DELETE')
             <button type="submit" class="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-800 transition duration-300">

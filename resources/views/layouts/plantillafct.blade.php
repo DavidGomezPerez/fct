@@ -52,13 +52,13 @@
                         </a>
                     </li>
                     <li class="relative group">
-                        <a href="#" class="hover:text-blue-200 transition duration-300">Tutores Empresas</a>
+                        <a href="{{ route("indexTutoresEmpresa") }}" class="hover:text-blue-200 transition duration-300">Tutores Empresas</a>
                         <ul class="absolute hidden group-hover:block bg-white text-gray-800 shadow-md mt-2 py-2 w-48 rounded-md z-10">
                             <li>
                                 <a href="{{ route("showAnyadirTutorEmpresa") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Añadir Tutor Empresa</a>
                             </li>
                             <li>
-                                <a href="" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Tutores Empresas</a>
+                                <a href="{{ route("indexTutoresEmpresa") }}" class="block px-4 py-2 hover:bg-blue-100 transition duration-300">Listar Tutores Empresas</a>
                             </li>
                         </ul>
                     </li>
