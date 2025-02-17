@@ -7,6 +7,7 @@ use App\Models\AlumnoTutorEmpresa;
 use App\Models\Tutorempresa;
 use App\Models\Tutorinstituto;
 use App\Rules\ValidarNUSS;
+use App\Rules\ValidarSolapamientoPracticas;
 use Illuminate\Http\Request;
 
 class AlumnoController extends Controller
@@ -107,6 +108,18 @@ class AlumnoController extends Controller
 
     public function asignarTutorEmpresa(Request $request){
         $asignacion = new AlumnoTutorEmpresa();
+
+        $request->validate([
+            "alumno_id" => "required|exists:alumnos,id",
+            "tutoresempresa_id" => "required|exists:tutoresempresas,id",
+            "fecha_inicio" => "required|date",
+            "fecha_fin" => [
+                "required",
+                "date", 
+                "after_or_equal: fecha_inicio",
+                new ValidarSolapamientoPracticas($request->alumno_id, 
+                    $request->fecha_inicio, $request->fecha_fin)],
+        ]);
 
         $asignacion->alumno_id = $request->alumno_id;
         $asignacion->tutoresempresa_id = $request->tutoresempresa_id;

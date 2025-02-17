@@ -8,7 +8,7 @@
             <h1 class="text-2xl text-center font-semibold">Asignar Tutor de Empresa a Alumno</h1>
 
             <div class="relative">
-                <select name="alumno_id" id="alumno_id" class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-2 focus:border-blue-500 focus:ring-blue-500 focus:outline-none">
+                <select name="alumno_id" id="alumno_id" class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-2 focus:border-blue-500 focus:ring-blue-500 focus:outline-none" required>
                     @forelse ($alumnos as $alumno)
                         <option value="{{ $alumno->id }}">{{ $alumno->nombre }}  {{ $alumno->apellidos }}</option>
                     @empty
@@ -21,7 +21,7 @@
             </div>
 
             <div class="relative">
-                <select name="tutoresempresa_id" id="tutoresempresa_id" class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-2 focus:border-blue-500 focus:ring-blue-500 focus:outline-none">
+                <select name="tutoresempresa_id" id="tutoresempresa_id" class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-2 focus:border-blue-500 focus:ring-blue-500 focus:outline-none" required>
                     @forelse ($tutoresEmpresa as $tutorEmpresa)
                         <option value="{{ $tutorEmpresa->id }}">{{ $tutorEmpresa->nombre }}  {{ $tutorEmpresa->apellidos }} ({{ $tutorEmpresa->empresa->nombre }})</option>
                     @empty
@@ -49,6 +49,17 @@
                     text: '{{ session("success") }}',
                     confirmButtonColor: "#2563eb",
                 });
+            });
+        </script>
+    @endif
+
+    @if ($errors->any())
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Errores en el formulario',
+                html: '{!! implode("<br>", $errors->all()) !!}',
+                confirmButtonColor: "#2563eb",
             });
         </script>
     @endif
