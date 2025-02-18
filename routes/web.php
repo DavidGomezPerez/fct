@@ -1,12 +1,26 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TutorEmpresaController;
 use App\Http\Controllers\TutorIesController;
-use App\Models\Tutorempresa;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 //Rutas GET de los alumnos
 Route::get("/", [HomeController::class, "index"])->name("index");
@@ -72,3 +86,5 @@ Route::delete("/empresa/delete/{id}", [EmpresaController::class, "destroy"])->na
 
 //Rutas DELETE de los tutores de empresa
 Route::delete("/tutorEmpresa/delete/{id}", [TutorEmpresaController::class, "destroy"])->name("destroyTutorEmpresa");
+
+require __DIR__.'/auth.php';
